@@ -19,4 +19,17 @@ html
     <h1>Статистика</h1>
     <!-- Содержимое страницы статистики -->
 </body>
+html
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var navLinks = document.querySelectorAll('nav ul li a');
+        var currentURL = window.location.pathname.split('/').pop();
+
+        navLinks.forEach(function(link) {
+            if (link.getAttribute('href') === currentURL) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
 </html>
